@@ -1,2 +1,3 @@
 # NLU-assignment1
-contains the assignments 1 of NLU
+This repository contains the first assignment of NLU.
+
