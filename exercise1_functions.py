@@ -62,13 +62,13 @@ def esercizio2(phrase):
 #a subtree of the original parsed phrase   
 def esercizio3(doc, wordlist):
     result=False#setting the default result to false
-    wordlist.sort()#sort the wordlist to make it easy the finding of the tree
+    wordlist=wordlist.sort()#sort the wordlist to make it easy the finding of the tree
     for token in doc:#for each token in doc find the subtree store in the list and proceed to compare
-        subtree=token.subtree
+        tree=token.subtree
         subtree_list=[]
-        for element in subtree:
+        for element in tree:
             subtree_list.append(element.text)
-        subtree_list.sort()
+        subtree_list=subtree_list.sort()
         if subtree_list==wordlist: #if find a subtree return
             return True
     return result
@@ -87,7 +87,7 @@ def esercizio4(sequence, doc=False):
     nlp=spacy.load('en_core_web_sm')
     if isinstance(doc, bool): #if there is no doc return the root of the entire phrase
         sequence=nlp(sequence)
-        span=sequence[0:-1]
+        span = sequence[0:-1]
         return span.root    
     result_dict={}#result dictionary
     #create the pattern from sequence and the matcher
@@ -96,7 +96,7 @@ def esercizio4(sequence, doc=False):
     matcher.add("pattern", [pattern])
     matches=matcher(doc)#find match in the document
     if matches:#if it has find a match save the match in the dictionary
-        for match_id,start,end in matches:
+        for match_id, start, end in matches:
             span=doc[start:end]
             result_dict[str(match_id)]=span.root
     return result_dict
