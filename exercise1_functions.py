@@ -75,17 +75,17 @@ def esercizio3(doc, wordlist):
 
 
 #function4
-#it take as an argument a string or a list of word forming a subsequence of a parsed text
-# that could be passed with parameter context. after that if the context is passed 
+#it take as an argument a sequence of words (a string or a list)forming an ordinate sequence of token of a parsed text
+# that is passed with doc (in alternative only the sequence could be passed). after that if the doc is passed 
 # the function use a phrase matcher to find the corresponding
-# span inside the original parsed document. than it put the root of the span inside a dictionary
-# whoose keys are the match id. if context was not setted its result is the root of the phrase
+# spans inside the original parsed document. than it put the root of the span inside a dictionary
+# whoose keys are the match id. if doc was not setted its result is the root of the phrase
 def esercizio4(sequence, doc=False):
     #change the sequence from list to string if it is in list format
     if(isinstance(sequence, list)):
         sequence=" ".join(sequence)
     nlp=spacy.load('en_core_web_sm')
-    if isinstance(doc, bool): #if there is no context return the root of the entire phrase
+    if isinstance(doc, bool): #if there is no doc return the root of the entire phrase
         sequence=nlp(sequence)
         span=sequence[0:-1]
         return span.root    
