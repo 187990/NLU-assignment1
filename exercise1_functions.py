@@ -80,27 +80,25 @@ def esercizio3(doc, wordlist):
 # the function use a phrase matcher to find the corresponding
 # span inside the original parsed document. than it put the root of the span inside a dictionary
 # whoose keys are the match id. if context was not setted its result is the root of the phrase
-def esercizio4(sequence, context=False):
+def esercizio4(sequence, doc=False):
     #change the sequence from list to string if it is in list format
     if(isinstance(sequence, list)):
         sequence=" ".join(sequence)
     nlp=spacy.load('en_core_web_sm')
-    if isinstance(context, bool): #if there is no context return the root of the entire phrase
+    if isinstance(doc, bool): #if there is no context return the root of the entire phrase
         sequence=nlp(sequence)
         span=sequence[0:-1]
-        return span.root
-     
+        return span.root    
     result_dict={}#result dictionary
     #create the pattern from sequence and the matcher
     matcher=PhraseMatcher(nlp.vocab)
     pattern=nlp(sequence)
     matcher.add("pattern", [pattern])
-    matches=matcher(context)#find match in the document
+    matches=matcher(doc)#find match in the document
     if matches:#if it has find a match save the match in the dictionary
         for match_id,start,end in matches:
-            span=context[start:end]
+            span=doc[start:end]
             result_dict[str(match_id)]=span.root
-    
     return result_dict
     
 
