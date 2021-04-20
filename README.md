@@ -29,7 +29,7 @@ the implemented function that are inside [exercise1_functions.py](./exercise1_fu
 - `esercizio1(phrase)` take as argument a string and return a dictionary containing the ancestors of each token
 - `esercizio2(phrase)` take as argument a string and return a dictionary containing the subtree of each token
 - `esercizio3(doc, wordlist)` take as argument a parsed document and a wordlist and return true if the wordlist rapresent a subtree inside the parsed document
-- `esercizio4(sequence, context=False)` take as argument a wordlist or string and optionally a context in the form of pased document. if both ar given it ouputs a dictionary containing the root of each matched span inside the context. if only the sequence is given it returns the root of the sequenc out of context as a single token.
+- `esercizio4(sequence, doc=False)` take as argument a wordlist or string and optionally a doc, meaning a parsed phrase from wich the sequence were extracted, in the form of pased document. if both ar given it ouputs a dictionary containing the root of each matched span inside the context. if only the sequence is given it returns the root of the sequenc out of context as a single token.
 - `esercizio5(phrase)` take as argument a string and return a dictionary containing the span of the token rapresenting nsubj, dobj and iobj
 
 it is possible to test the function with [exercise1_test.py](./exercise1_test.py) 
