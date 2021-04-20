@@ -33,7 +33,7 @@ the implemented functions that are inside [exercise1_functions.py](./exercise1_f
 - `esercizio5(phrase)` take as argument a string and return a dictionary containing the span of the token rapresenting nsubj, dobj and iobj
 
 it is possible to test the functions with [exercise1_test.py](./exercise1_test.py) 
-more details of the implementation are in report.pdf
+more details of the implementation are in [report.pdf](./report.pdf)
 
 ### advanced part and test file
 the implemented code is divided in two file:
@@ -41,4 +41,4 @@ the implemented code is divided in two file:
 - [exercise2_parser_2.py](./exercise2_parser_2.py)  contains the modified version of the parser with a multinomial logistic regression classifier instead of SVM.
 
 it is possible to test the code and compare performances with [exercise2_test.py](./exercise2_parser_2.py) 
-more details of the implementation are in report.pdf
+more details of the implementation are in  [report.pdf](./report.pdf)
